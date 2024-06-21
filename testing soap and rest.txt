@@ -1,0 +1,380 @@
+API Testing with soap and rest workshop:
+-------------------------------------------
+
+What is API?
+• API stands for Application Programming Interface
+• APIs are mechanisms that enable two software components to communicate with each other 
+    using a set of definitions and protocols.
+• API contains collections of functions and procedures
+
+Types
+• Private AΡΙ
+• Public API
+• Partner API
+• Composite API
+
+What are Web Services?
+•A Web service is a software package that is used for communicating between 
+two devices or web entities lying on the network.
+Types:-
+• SOAP Web Services
+• REST Web Services
+
+• The abbreviation of SOAP is the Simple Object Access Protocol.
+   All its messages are usually in XML format, The SOAP message consists of: Root element, Headers & body
+   
+   
+• REST stands for Representational State Transfer,
+ It establishes connection over http or https protocol
+ (GET, PUT, POST, DELETE, etc.). 
+ The allocation of resources in REST depends on the URL & it's
+ messages will be in JSON, Text, HTML, XML etc.
+ 
+ 
+ 
+how to test soap web service?
+-------------------------------
+demo how to write the code (Java dev , show some spring boot is a framework to rest rest api)
+
+What is SOAP
+
+2 ways to write web services:
+1. REST web services
+2. SOAP web services
+Simple Object Access protocol
+
+	application1							application2
+					--------------------
+							xml
+		SOAP
+		WSDL :web serice description language
+		
+SOAP web service testing:
+======================================	
+
+Agenda: lession 1
+------------------
+ * What is SOAP based web service?
+ * How it works,architecture
+ * sw development of soap web service , hello world with java
+  * how to undestand wsdl file
+  * how to customized wsdl file
+  
+  
+ * install  soap ui smartbear 5.7
+ https://soapui.org/downloads/soapui/soapui-os-older-versions/
+ * download and install
+ * how to test cal application
+	 contains
+	 not contains
+ 
+	
+Agenda lession 2:
+------------------
+Testing simple calculator application
+Creating soap project using WSDL
+create test suite and test cases
+added contains assertions
+execute test in sequence and parallel
+documentation
+
+Agenda lession 3:
+------------------
+Contains
+Not contains
+Xpath Query match
+Invalid http status code
+valid http status code
+soap faults
+
+Example:
+https://ws.footballpool.dataaccess.eu/info.wso?WSDL
+
+We should have understanding of some fundaments:
+-------------------------------------------------
+xml: https://www.w3schools.com/xml/
+
+XML schema: used to validation xml doc
+	https://www.w3schools.com/xml/schema_intro.asp
+	
+XML DTD (older way to validation xml)
+	https://www.w3schools.com/xml/xml_dtd.asp
+	
+Xpath:
+https://www.w3schools.com/xml/xpath_intro.asp
+Xpath: is a query language for selecting 
+nodes form xml documents
+
+XPath can be used to navigate through elements and attributes in an XML document.
+	XPath stands for XML Path Language
+	XPath uses "path like" syntax to identify and navigate nodes in an XML document
+	XPath contains over 200 built-in functions
+	XPath is a major element in the XSLT standard
+	XPath is a W3C recommendation
+	
+
+
+http://xpather.com/
+
+All player:
+
+Example: we can to assert that id of first player is 6100
+
+//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName[1]/m:iId
+
+
+Example: we can to assert that name of first player is "Constantin Grameni"
+
+//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName[1]/m:sName
+
+Example: we can to assert how many sname tag presents?
+
+//count(//m:sName)
+
+Tag presence:
+//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName/m:sName
+true
+
+Check sName match:
+matches(//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName[1]/m:sName,"Aaron Cresswell")
+true
+
+Check Names should have only alphabets:
+matches(//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName[1]/m:sName,'[A-Za-z]*')
+true
+
+Check ID's should have only digits:
+matches(//m:AllPlayerNamesResponse/m:AllPlayerNamesResult/m:tPlayerName[1]/m:iId,'\d')
+true
+
+
+
+XQuery:
+it is language for Querying XML data
+XQuery is to XML same as SQL to database
+XQuery buid on top of Xpath expression
+XQuery use functions to extract data from xml documents
+
+Tutorial :
+https://www.w3schools.com/xml/xquery_intro.asp
+
+Example:
+https://www.w3schools.com/xml/books.xml
+
+
+Invalid/Valid http status code:
+---------------------------
+understanding http status code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://www.dneonline.com/calculator.asmx?wsdl
+install Wizdler - Chrome Web Store as plugin
+
+Q: how to create doc for soap web service
+	wsdl file act as documentation: no need to have extra doc
+	knowledge to read wsdl correctly
+	
+		 
+		 
+		rest: swagger to create doc
+
+ 
+ 
+ 
+ Post is non idemoptent
+ Http Status code
+ 
+ REST build on top of http protocol
+ 
+ Uniform interface:
+	 A group of methods, such as GET, PUT, POST, and DELETE, 
+	that are easily understood by the client and server
+Stateless: Each request is processed independently from the previous ones
+
+Cacheable: REST is cache friendly and supports multiple formats
+
+Client-server: 
+	The server has "resources" that are presented to the client as a representation of the resource's state
+
+Layered system: 
+	Individual components cannot see beyond the immediate layer with which they are interacting 
+
+
+Topic - 01 (API Testing)
+-------------------------
+What is Postman?
+	tool to test rest api
+	free to insall and use in production system
+	download and just install
+	login with ur username/password : gmail
+	
+• What is API & its types?
+	web api: REST api
+	
+• What are Web Services? & It's types
+	REST 
+	SOAP
+	
+• How to Install Postman?
+	:)
+• What are the other software's required?
+	nodejs, npm package manager
+	
+• Create Collections & Folders
+• How to Create First Request in Postman?
+• Create GET, POST, PUT & DELETE Requests
+
+https://restful-booker.herokuapp.com/apidoc/index.html#api-Booking-CreateBooking
+
+
+Topic - 02 (API Testing)
+-------------------------
+Negative Scenarios
+• How to declare & use Environment Variables?
+• How to save response in variable?
+• Postman Console - Debugging
+• Create automatic API tests?
+• Assertions -
+• Status code
+• Response body contains
+• Response header
+• Response time
+
+• use Environment Variables?
+Environment
+	dev test pre prod prod
+	
+Negative Scenarios
+	• Record not found
+	• Request has invalid characters
+	• Values has to many characters
+	• Request sent with missing information
+	• Value is not in correct format
+	
+
+Ex: How to declare & use Environment Variables?
+let we want to use firstname for env variable
+let we want to use lastname for env variable
+
+Ex: we will create a new booking 
+ "bookingid": 392
+ now we want to define bookingid into a variable so that it can be used in all the 
+ crud methods
+ 
+var jsonData=pm.response.json();
+pm.environment.set("b_id",jsonData.bookingid);
+it will set a variable once we run the request
+
+https://restful-booker.herokuapp.com/booking/{{b_id}}
+
+Do same for api token used to update the api
+
+
+
+Topic - 03 (API Testing)
+-------------------------
+Advanced Assertions
+• JSON Assertion
+• Nested JSON Assertion
+• Curl Command
+• How to execute Collection?
+• How to execute folder?
+• Exclude tests script from execution
+• How to Export Collection?
+
+
+develpment
+
+best practices
+	https://martinfowler.com/articles/richardsonMaturityModel.html
+Level 0
+Level 1 - Resources
+Level 2 - HTTP Verbs
+Level 3 - Hypermedia Controls
+
+
+
+
+	
+
+security
+
+	basics auth: here username and password need to be passed with each request
+	jwt token: here rather then username and password we will pass the jwt token
+	oauth: mainly use for authorization using 3rd party application
+	
+	login using facebook
+	......
+	
+Testing JWT based api:
+======================
+
+https://survayapi.themetasum.com/swagger/index.html
+
+url for resitering new user:
+https://survayapi.themetasum.com/api/Authenticate/Register
+
+url for getting jwt token, u need to login the the app with the username/password you have registered:
+https://survayapi.themetasum.com/api/Authenticate/login
+
+
+
+calling a secure api:
+	1. without token : 401
+	2. with valid token : 200 with data
+	
+https://survayapi.themetasum.com/api/Survay/getSurvayData
+
+
+
+versioning(live coding)
+http://localhost:8080/v1/products
+http://localhost:8080/v2/products
+
+
+Writing REST api
+Writing SOAP api
+SOAP api testing
+
+<version>2.2.2.RELEASE</version>
+<java.version>1.8</java.version>
+
+<version>2.1.4.RELEASE</version>
+30 min to try to use api 
+to run the test cases
+
+How to develop rest api?
+----------------------
+rest : python
+rest : c#
+rest : java
+rest : js
+
+Spring boot is a defacto stand to create microservice rest api application
+
+it provide you a template to create rest api
+
+Not soap faults
+SOAP response 
+Response SLA
+script assertions
+Json path count
+Json path match
